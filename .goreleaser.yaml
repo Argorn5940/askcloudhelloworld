@@ -1,0 +1,31 @@
+builds:
+  - binary: askcloudhelloworld
+  - goos:
+      - darwin
+      - windows
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -mod=vendor
+release:
+  prerelease: auto
+
+universal_binaries:
+  - replace: true
+
+brews:
+  - name: askcloudhelloworld
+    homepage: https://github.com/Argorn5940/askcloudhelloworld
+    tap:
+      owner: askcloudhelloworld
+      name: homebrew-askcloudarchitech
+    commit_author:
+      name: Argorn5940
+      email: saito5940@gmail.com
+
+checksum:
+  name_template: "checksums.txt"
